@@ -10,8 +10,7 @@ function getHumanChoice() {
     return a;
 }
 
-let humanScore = 0;
-let computerScore = 0;
+
 
 function playRound(humanChoice, computerChoice) {
     computerChoice = getComputerChoice().toLowerCase();
@@ -38,15 +37,20 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGame() {
+    let humanScore = 0;
+    let computerScore = 0;
     for (let i = 0; i < 5; i++) {
         let humanSelection = getHumanChoice().toLowerCase();
         let computerSelection = getComputerChoice();
-        console.log(playRound(humanSelection, computerSelection));
-        if (playRound().includes("win")) humanScore++;
-        else if (playRound().includes("lose")) computerScore++;
+        let ans = playRound(humanSelection, computerSelection)
+        console.log(ans);
+        if (ans.includes("win")) humanScore++;
+        else if (ans.includes("lose")) computerScore++;
     }
     if (humanScore > computerScore) return "Human win";
-    else return "Computer win";
+    else if (humanScore < computerScore) return "Computer win";
+    else return "Draw";
 }
+
 
 console.log(playGame());
