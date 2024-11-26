@@ -1,5 +1,5 @@
 function getComputerChoice() {
-    let a = Math.random() + 2;
+    let a = Math.random() * 3;
     if (a == 0) return "Rock";
     else if (a == 1) return "Paper";
     else return "Scissors";
