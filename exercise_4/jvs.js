@@ -122,4 +122,24 @@ menu.removeChild(menu.lastElementChild);
 //The originalNode is the element to be cloned
 //The cloneNode() returns a copy of the originalNode,  all attributes and inline listeners of the originalNode but doesn’t copy the event listeners and data                     
 let clonedMenu = menu.cloneNode(true);
-document.body.appendChild(clonedMenu);                         
+document.body.appendChild(clonedMenu);        
+
+
+
+//Use the parentNode.append() method to append a set of Node objects or DOMString objects after the last child node of the parentNode.
+let app = document.querySelector('#app');
+
+let langs = ['TypeScript','HTML','CSS'];
+
+let nodes = langs.map(lang => {
+    let li = document.createElement('li');
+    li.textContent = lang;
+    return li;
+});
+
+app.append(...nodes);
+
+
+
+
+//Use the parentNode.prepend() method to prepend a list of Node objects or DOMString objects before the first child node of the parent node.
