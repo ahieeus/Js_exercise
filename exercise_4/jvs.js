@@ -143,3 +143,5 @@ app.append(...nodes);
 
 
 //Use the parentNode.prepend() method to prepend a list of Node objects or DOMString objects before the first child node of the parent node.
+
+//Use the parentNode.insertBefore(newNode, existingNode) to insert a new node before an existing node as a child node of a parent node.
